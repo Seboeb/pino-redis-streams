@@ -2,9 +2,14 @@
   "name": "pino-redis-streams",
   "version": "1.0.0",
   "description": "A pino transport which outputs to a Redis Stream",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -13,7 +18,9 @@
   "keywords": [
     "pino",
     "redis",
-    "streams"
+    "streams",
+    "logger",
+    "log"
   ],
   "author": "Sebastiaan Hekner",
   "license": "ISC",
