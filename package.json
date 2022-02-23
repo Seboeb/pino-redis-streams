@@ -1,0 +1,31 @@
+{
+  "name": "pino-redis-streams",
+  "version": "1.0.0",
+  "description": "A pino transport which outputs to a Redis Stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seboeb/pino-redis-streams.git"
+  },
+  "keywords": [
+    "pino",
+    "redis",
+    "streams"
+  ],
+  "author": "Sebastiaan Hekner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seboeb/pino-redis-streams/issues"
+  },
+  "homepage": "https://github.com/Seboeb/pino-redis-streams#readme",
+  "dependencies": {
+    "@secrid/redis-streams-nodejs": "^1.0.4",
+    "pino-abstract-transport": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.19"
+  }
+}
