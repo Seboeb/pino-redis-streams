@@ -3,19 +3,21 @@ import { RedisClient, StreamMessageData } from '@secrid/redis-streams-nodejs';
 
 type RedisClientOptions = ConstructorParameters<typeof RedisClient>[0];
 
-export default async function (options: {
-  clientOptions: Partial<RedisClientOptions>;
-  streams: string | string[];
-}) {
+export default async function (options: { clientOptions: Partial<RedisClientOptions>; streams: string | string[] }) {
   const clientOptions = options.clientOptions;
   clientOptions.clientName = clientOptions.clientName || 'undefined';
   clientOptions.groupName = clientOptions.groupName || 'undefined';
 
   const client = new RedisClient(clientOptions as RedisClientOptions);
-  client.on('error', err => console.error('Redis client for logging failed.', err));
+  client.on('error', err => console.error('Redis client for pino-redis-streams logging failed.', err));
   await client.connect();
 
   const producer = client.createProducer();
+
+  setInterval(async function () {
+    // Ping for azure redis cache timeouts
+    client.ping();
+  }, 5 * 60 * 1000);
 
   const fn = build(async function (source) {
     let obj: unknown;
