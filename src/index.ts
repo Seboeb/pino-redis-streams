@@ -1,5 +1,5 @@
 import build from 'pino-abstract-transport';
-import { RedisClient, StreamMessageData } from '@secrid/redis-streams-nodejs';
+import { RedisClient, StreamMessageData } from 'redis-streams-nodejs';
 
 type RedisClientOptions = ConstructorParameters<typeof RedisClient>[0];
 
