@@ -1,6 +1,6 @@
 {
   "name": "pino-redis-streams",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A pino transport which outputs to a Redis Stream",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,8 @@
     "redis",
     "streams",
     "logger",
-    "log"
+    "log",
+    "transport"
   ],
   "author": "Sebastiaan Hekner",
   "license": "ISC",
@@ -29,8 +30,8 @@
   },
   "homepage": "https://github.com/Seboeb/pino-redis-streams#readme",
   "dependencies": {
-    "@secrid/redis-streams-nodejs": "^1.0.4",
-    "pino-abstract-transport": "^0.5.0"
+    "pino-abstract-transport": "^0.5.0",
+    "redis-streams-nodejs": "^1.1.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.19"
